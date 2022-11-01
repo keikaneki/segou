@@ -1074,7 +1074,7 @@ footer {
 						right: -30px;
 						top: 0;
 						width: calc(100% + 140px);
-						height: 400px;
+						height: 340px;
 						background-color: $lightgreen;
 						z-index: 0;
 					}
@@ -1128,30 +1128,34 @@ footer {
 					&::before {}
 				}
 				ul {
-					flex-direction: column;
 					width: 100%;
 					li {
-						width: 100%;
+						width: 33.333%;
 						a {
 							width: 100%;
 							position: relative;
+							display: flex;
+							flex-direction: column;
+							height: 100%;
 							picture {
-								width: 60%;
+								width: 100%;
 								display: block;
 							}
 							div {
-								width: 50%;
+								width: 100%;
 								margin-top: 0;
-								position: absolute;
+								height: 100%;
 								right: 0;
 								top: 0;
-								padding: 20px 15px;
+								padding: 15px 10px;
 								@include corner-sp();
 								h2 {
-									font-size: $fs-2-sp;
+									font-size: $fs-3-sp;
+									line-height: 1.4;
+									margin: 4px 0;
 								}
 								p {
-									font-size: $fs-7-sp;
+									font-size: 1rem;
 									span {
 										margin-top: 10px;
 									}
@@ -2248,6 +2252,205 @@ footer {
 						font-size: $fs-2-sp;
 					}
 				}
+			}
+		}
+	}
+}
+/***************************************************************************************
+*
+*
+*
+* INNER
+*
+*
+*
+****************************************************************************************/
+.contents-wrap {
+	display: flex;
+	justify-content: space-between;
+	width: 1260px;
+	max-width: 100%;
+	padding: 40px 30px 60px;
+	margin: 0 auto;
+}
+.side-bar {
+	width: 300px;
+	flex-shrink: 0;
+	font-size: $fs-6;
+	li {
+		list-style: none;
+	}
+	&__bnr {
+		padding-bottom: 20px;
+		li {
+			margin-bottom: 10px;
+		}
+	}
+	&__menu {
+		padding-bottom: 30px;
+		dt {
+			background-color: $green;
+			color: $white;
+			@include font-serif();
+			padding: 15px 10px;
+			font-size: $fs-5;
+		}
+		dd {
+			a {
+				padding: 10px 10px 10px 10px;
+				display: block;
+				position: relative;
+				border-bottom: 1px solid $gray;
+				@include corner($green);
+				&::after {
+					border-right-width: 8px;
+					border-top-width: 8px;
+					right: 0;
+					bottom: 5px;
+				}
+			}
+		}
+	}
+}
+article {
+	width: calc(100% - 340px);
+	h1 {
+		font-size: $fs-1;
+		margin-bottom: 40px;
+		color: $green;
+		border-bottom: 2px solid $green;
+		padding-bottom: 10px;
+	}
+	h2 {
+		font-size: $fs-2;
+		margin-bottom: 30px;
+		border-bottom: 1px solid #000;
+		padding-bottom: 10px;
+	}
+	h3 {
+		font-size: $fs-3;
+		margin-bottom: 30px;
+		color: $green;
+	}
+	h4 {
+		font-size: $fs-4;
+		margin-bottom: 30px;
+	}
+	p {
+		margin-bottom: 30px;
+	}
+	ul {
+		padding-bottom: 30px;
+		li {
+			position: relative;
+			padding-left: 20px;
+			margin-bottom: 10px;
+			&::before {
+				content: "";
+				display: block;
+				position: absolute;
+				left: 0;
+				top: 12px;
+				width: 8px;
+				height: 8px;
+				border-radius: 4px;
+				background-color: $green;
+			}
+		}
+	}
+	strong {
+		color: $red;
+		font-weight: normal;
+	}
+	a {
+		color: $green;
+		text-decoration: underline;
+		&:hover {
+			text-decoration: none;
+		}
+	}
+	table {
+		width: 100%;
+		border-top: 1px solid $gray;
+		border-left: 1px solid $gray;
+		line-height: 1.4;
+		margin-bottom: 40px;
+		th {
+			background-color: $lightgreen;
+			border-bottom: 1px solid $gray;
+			border-right: 1px solid $gray;
+			padding: 10px;
+			font-weight: normal;
+			text-align: left;
+		}
+		td {
+			border-bottom: 1px solid $gray;
+			border-right: 1px solid $gray;
+			padding: 10px;
+		}
+	}
+	.block-beige {
+		padding: 30px;
+		background-color: #F5F3EB;
+		margin-bottom: 30px;
+		&>*:last-child{
+			margin-bottom: 0;
+		}
+	}
+	.block-green {
+		padding: 30px;
+		background-color: $lightgreen;
+		margin-bottom: 30px;
+		&>*:last-child{
+			margin-bottom: 0;
+		}
+	}
+	.text-left {
+		text-align: left;
+	}
+	.text-center {
+		text-align: center;
+	}
+	.text-right {
+		text-align: right;
+	}
+	.button-wrap {
+		margin-top: 0;
+		margin-bottom: 10px;
+		display: flex;
+		justify-content: center;
+		&.text-left {
+			justify-content: flex-start;
+		}
+		&.text-right {
+			justify-content: flex-end;
+		}
+		.button {
+			text-decoration: none;
+			width: 48% !important;
+			height: 80px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			position: relative;
+			margin: 0 10px 20px;
+			@include shadow-1();
+			&.green {
+				@include grad-green();
+				color: $white;
+				@include corner($white);
+			}
+			&.red {
+				@include grad-red();
+				color: $white;
+				@include corner($white);
+				@include font-sans();
+				font-size: 100%;
+			}
+			&.white {
+				background-color: $white;
+				color: $green;
+				@include corner($green);
 			}
 		}
 	}
