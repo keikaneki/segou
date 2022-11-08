@@ -2860,4 +2860,41 @@ article .button-wrap .button.white::after {
   border-right: 10px solid #90A741;
   border-top: 10px solid transparent;
 }
+
+@media screen and (max-width: 1080px) {
+  .contents-wrap {
+    padding: 40px 20px 60px;
+  }
+
+  .side-bar {
+    display: none;
+  }
+
+  article {
+    width: 100%;
+  }
+  article h1 {
+    font-size: 2.8rem;
+  }
+  article h2 {
+    font-size: 2.4rem;
+  }
+  article h3 {
+    font-size: 2rem;
+  }
+  article h4 {
+    font-size: 1.8rem;
+  }
+}
+@media screen and (max-width: 640px) {
+  article .button-wrap {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  article .button-wrap .button {
+    width: 100% !important;
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
 /*# sourceMappingURL=style.css.map */

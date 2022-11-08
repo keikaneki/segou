@@ -2393,7 +2393,7 @@ article {
 		padding: 30px;
 		background-color: #F5F3EB;
 		margin-bottom: 30px;
-		&>*:last-child{
+		&>*:last-child {
 			margin-bottom: 0;
 		}
 	}
@@ -2401,7 +2401,7 @@ article {
 		padding: 30px;
 		background-color: $lightgreen;
 		margin-bottom: 30px;
-		&>*:last-child{
+		&>*:last-child {
 			margin-bottom: 0;
 		}
 	}
@@ -2451,6 +2451,41 @@ article {
 				background-color: $white;
 				color: $green;
 				@include corner($green);
+			}
+		}
+	}
+}
+@include tab {
+	.contents-wrap {
+		padding: 40px 20px 60px;
+	}
+	.side-bar {
+		display: none;
+	}
+	article {
+		width: 100%;
+		h1 {
+			font-size: $fs-1-sp;
+		}
+		h2 {
+			font-size: $fs-2-sp;
+		}
+		h3 {
+			font-size: $fs-3-sp;
+		}
+		h4 {
+			font-size: $fs-4-sp;
+		}
+	}
+}
+@include sp {
+	article {
+		.button-wrap {
+			flex-wrap: wrap;
+			.button {
+				width: 100% !important;
+				margin-right: 0;
+				margin-left: 0;
 			}
 		}
 	}
